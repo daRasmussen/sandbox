@@ -7,3 +7,14 @@ while(counter < maxPixels) {
   canvas.appendChild(span);
   counter++;
 }
+const pixels = document.getElementsByClassName('pixel');
+for(let pixel of pixels) {
+  pixel.addEventListener('mouseover', () => {
+    pixel.classList.add('black');
+  });
+}
+canvas.addEventListener('click', () => {
+  for(let pixel of pixels) {
+    pixel.classList.remove('black');
+  }
+})
